@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-5">
+      <!-- event data pass by click on custom event -->
+      <app-recipe-list></app-recipe-list>
+    </div>
+    <div class="col-md-7">
+      <!-- 
+        bind data from model Recipe which selectedRecipe clicked
+        if selectedRecipe clicked then show select recipe
+        otherwise #nifotext
+      -->
+      <app-recipe-detail
+      *ngIf="selectedRecipe; else infotext"></app-recipe-detail>
+      <router-outlet></router-outlet>
+      <!-- <ng-template #infotext>
+        <p>Recipe Not Selected</p>
+      </ng-template> -->
+    </div>
+  </div>
+</div>

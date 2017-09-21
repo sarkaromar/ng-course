@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-md-12">
+    <button class="btn btn-primary" (click)="onNewRecipe()">Add New Recipe</button>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-md-12">
+    <!-- 
+      recived data on this component and ngfor it
+      bind data [recipe] 
+      and decler a custom event to pass data 
+    -->
+    <app-recipe-item 
+      *ngFor="let recipeEl of recipes; let i = index"
+      [recipe]="recipeEl"
+      [index] = "i">
+    </app-recipe-item>
+  </div>
+</div>
